@@ -1,0 +1,22 @@
+[2025-06-06T00:36:08.674+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: comments_ingestion.fetch_and_store_comments_task scheduled__2025-06-06T00:00:00+00:00 [queued]>
+[2025-06-06T00:36:08.733+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: comments_ingestion.fetch_and_store_comments_task scheduled__2025-06-06T00:00:00+00:00 [queued]>
+[2025-06-06T00:36:08.735+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-06T00:36:08.862+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_and_store_comments_task> on 2025-06-06 00:00:00+00:00
+[2025-06-06T00:36:08.888+0000] {standard_task_runner.py:60} INFO - Started process 194 to run task
+[2025-06-06T00:36:08.930+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'comments_ingestion', 'fetch_and_store_comments_task', 'scheduled__2025-06-06T00:00:00+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/api_to_db_dag_commments.py', '--cfg-path', '/tmp/tmprihw5dzb']
+[2025-06-06T00:36:08.942+0000] {standard_task_runner.py:88} INFO - Job 84: Subtask fetch_and_store_comments_task
+[2025-06-06T00:36:09.270+0000] {task_command.py:423} INFO - Running <TaskInstance: comments_ingestion.fetch_and_store_comments_task scheduled__2025-06-06T00:00:00+00:00 [running]> on host e2020a2f916b
+[2025-06-06T00:36:09.696+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='comments_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_comments_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-06T00:00:00+00:00'
+[2025-06-06T00:36:09.700+0000] {api_to_db_dag_commments.py:39} INFO - Đang gọi API: https://app.circle.so/api/admin/v2/comments?page=1&per_page=10
+[2025-06-06T00:36:15.843+0000] {api_to_db_dag_commments.py:42} INFO - Đã lấy 45 bản ghi từ API (nhiều trang).
+[2025-06-06T00:36:15.844+0000] {api_to_db_dag_commments.py:44} INFO - Sample comment record: {'id': 72177702, 'parent_comment_id': None, 'flagged_for_approval_at': None, 'created_at': '2025-05-08T09:33:09.484Z', 'body': {'id': None, 'name': 'body', 'body': '<div><p>testing 3</p></div>', 'record_type': 'Comment', 'record_id': 72177702, 'created_at': None, 'updated_at': None}, 'user': {'id': 28410442, 'name': 'Richie', 'avatar_url': 'https://secure.gravatar.com/avatar/0c6973589cf9f2dd8d7fc2614fda376d?default=404&secure=true&size=300', 'email': 'thaihoangvu.thv@gmail.com'}, 'post': {'id': 21314353, 'name': 'Brand task', 'slug': 'brand-task'}, 'space': {'id': 2022679, 'slug': 'night-edition', 'name': 'Night edition'}, 'url': 'https://via-staging.circle.so/c/night-edition/brand-task#comment_wrapper_72177702', 'community_id': 327527, 'likes_count': 1, 'user_posts_count': 5, 'user_likes_count': 1, 'user_comments_count': 5, 'replies_count': 0}
+[2025-06-06T00:36:15.844+0000] {api_to_db_dag_commments.py:51} INFO - Đang kết nối đến cơ sở dữ liệu với Conn ID: QUANG
+[2025-06-06T00:36:15.850+0000] {base.py:83} INFO - Using connection ID 'QUANG' for task execution.
+[2025-06-06T00:36:16.047+0000] {api_to_db_dag_commments.py:57} INFO - Kết nối cơ sở dữ liệu thành công.
+[2025-06-06T00:36:16.134+0000] {api_to_db_dag_commments.py:106} WARNING - Bỏ qua comment id=71635536 vì post_id=21097324 không tồn tại trong posts
+[2025-06-06T00:36:16.200+0000] {api_to_db_dag_commments.py:124} INFO - Đã chèn/cập nhật 44 comment vào DB.
+[2025-06-06T00:36:16.201+0000] {api_to_db_dag_commments.py:130} INFO - Đã đóng kết nối cơ sở dữ liệu.
+[2025-06-06T00:36:16.202+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-06T00:36:16.210+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=comments_ingestion, task_id=fetch_and_store_comments_task, execution_date=20250606T000000, start_date=20250606T003608, end_date=20250606T003616
+[2025-06-06T00:36:16.244+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-06T00:36:16.253+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

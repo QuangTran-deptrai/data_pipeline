@@ -1,0 +1,102 @@
+[2025-06-04T04:33:03.115+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task manual__2025-06-04T11:32:57+07:00 [queued]>
+[2025-06-04T04:33:03.151+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task manual__2025-06-04T11:32:57+07:00 [queued]>
+[2025-06-04T04:33:03.163+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-04T04:33:03.210+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_and_store_community_members_task> on 2025-06-04 04:32:57+00:00
+[2025-06-04T04:33:03.218+0000] {standard_task_runner.py:60} INFO - Started process 608 to run task
+[2025-06-04T04:33:03.225+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'circle_community_members_ingestion', 'fetch_and_store_community_members_task', 'manual__2025-06-04T11:32:57+07:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/api_to_db_dag.py', '--cfg-path', '/tmp/tmpfl74jm3z']
+[2025-06-04T04:33:03.229+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask fetch_and_store_community_members_task
+[2025-06-04T04:33:03.347+0000] {task_command.py:423} INFO - Running <TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task manual__2025-06-04T11:32:57+07:00 [running]> on host 4050e9dd859e
+[2025-06-04T04:33:03.527+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='circle_community_members_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_community_members_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-04T04:32:57+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-04T11:32:57+07:00'
+[2025-06-04T04:33:03.530+0000] {api_to_db_dag.py:19} INFO - Đang gọi API: https://app.circle.so/api/admin/v2/events?page=1&per_page=10
+[2025-06-04T04:33:04.139+0000] {api_to_db_dag.py:24} INFO - Dữ liệu nhận được từ API: {
+  "page": 1,
+  "per_page": 10,
+  "has_next_page": false,
+  "count": 1,
+  "page_count": 1,
+  "records": [
+    {
+      "id": 21097324,
+      "name": "Event 1",
+      "slug": "event-1",
+      "user_id": 18507639,
+      "community_member_id": 36644610,
+      "created_at": "2025-05-01T06:35:47.755Z",
+      "hide_meta_info": null,
+      "confirmation_message_title": null,
+      "confirmation_message_button_title": null,
+      "confirmation_message_button_link": null,
+      "confirmation_message_description": null,
+      "in_person_location": null,
+      "host": null,
+      "duration_in_seconds": 3600,
+      "enable_custom_thank_you_message": false,
+      "send_in_app_notification_confirmation": true,
+      "rsvp_disabled": false,
+      "send_email_confirmation": true,
+      "send_email_reminder": true,
+      "send_in_app_notification_reminder": true,
+      "virtual_location_url": null,
+      "starts_at": "2025-05-01T07:00:00.000Z",
+      "location_type": "in_person",
+      "hide_attendees": false,
+      "ends_at": "2025-05-01T08:00:00.000Z",
+      "updated_at": "2025-05-01T09:00:03.703Z",
+      "hide_location_from_non_attendees": false,
+      "space": {
+        "id": 2009621,
+        "slug": "event-space",
+        "name": "Event Space",
+        "community_id": 327527
+      },
+      "body": "Test Event Description",
+      "url": "https://via-staging.circle.so/c/event-space/event-1",
+      "member_email": "dklong@vietnamisawesome.com",
+      "member_name": "DK Long",
+      "member_avatar_url": "https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSVlsRXdVPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3471ef6a0e9e37628eb6310416c1abeeefe6cc44/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU2Q25OaGRtVnlld1k2Q25OMGNtbHdWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--67365f61f655fbc86c65a51f2e9992ab818c41cd/candidate5.jpg",
+      "zapier_display_title": "Event 1  1 May 2025 7:00AM UTC",
+      "likes_count": 0,
+      "comments_count": 1,
+      "cover_image_url": "https://assets-v2.circle.so/36p460la9wgfxmwi9jvr7id13mld",
+      "topics": []
+    }
+  ]
+}
+[2025-06-04T04:33:04.140+0000] {api_to_db_dag.py:34} INFO - Đang kết nối đến cơ sở dữ liệu với Conn ID: google_cloud_sql_mysql
+[2025-06-04T04:33:04.156+0000] {base.py:83} INFO - Using connection ID 'google_cloud_sql_mysql' for task execution.
+[2025-06-04T04:33:04.236+0000] {api_to_db_dag.py:123} ERROR - Lỗi khi lưu dữ liệu vào cơ sở dữ liệu: (1045, "Access denied for user 'root'@'116.111.184.198' (using password: YES)")
+[2025-06-04T04:33:04.237+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/api_to_db_dag.py", line 37, in fetch_and_store_data
+    conn = hook.get_conn()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/mysql/hooks/mysql.py", line 195, in get_conn
+    return MySQLdb.connect(**conn_config)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/__init__.py", line 121, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super().__init__(*args, **kwargs2)
+MySQLdb.OperationalError: (1045, "Access denied for user 'root'@'116.111.184.198' (using password: YES)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/airflow/dags/api_to_db_dag.py", line 124, in fetch_and_store_data
+    conn.rollback()
+UnboundLocalError: local variable 'conn' referenced before assignment
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/api_to_db_dag.py", line 127, in fetch_and_store_data
+    if conn:
+UnboundLocalError: local variable 'conn' referenced before assignment
+[2025-06-04T04:33:04.255+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=circle_community_members_ingestion, task_id=fetch_and_store_community_members_task, execution_date=20250604T043257, start_date=20250604T043303, end_date=20250604T043304
+[2025-06-04T04:33:04.280+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 14 for task fetch_and_store_community_members_task (local variable 'conn' referenced before assignment; 608)
+[2025-06-04T04:33:04.323+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-04T04:33:04.344+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,57 @@
+[2025-06-05T05:55:23.628+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: posts_ingestion.fetch_and_store_posts_task manual__2025-06-05T12:55:18+07:00 [queued]>
+[2025-06-05T05:55:23.673+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: posts_ingestion.fetch_and_store_posts_task manual__2025-06-05T12:55:18+07:00 [queued]>
+[2025-06-05T05:55:23.675+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-05T05:55:23.773+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_and_store_posts_task> on 2025-06-05 05:55:18+00:00
+[2025-06-05T05:55:23.787+0000] {standard_task_runner.py:60} INFO - Started process 2790 to run task
+[2025-06-05T05:55:23.805+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'posts_ingestion', 'fetch_and_store_posts_task', 'manual__2025-06-05T12:55:18+07:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/api_to_db_dag_post.py', '--cfg-path', '/tmp/tmpkj12eqem']
+[2025-06-05T05:55:23.816+0000] {standard_task_runner.py:88} INFO - Job 55: Subtask fetch_and_store_posts_task
+[2025-06-05T05:55:24.054+0000] {task_command.py:423} INFO - Running <TaskInstance: posts_ingestion.fetch_and_store_posts_task manual__2025-06-05T12:55:18+07:00 [running]> on host e4f5e6f9211f
+[2025-06-05T05:55:25.089+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='posts_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_posts_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-05T05:55:18+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-05T12:55:18+07:00'
+[2025-06-05T05:55:25.097+0000] {api_to_db_dag_post.py:37} INFO - Đang gọi API: https://app.circle.so/api/admin/v2/posts?page=1&per_page=60
+[2025-06-05T05:55:30.041+0000] {api_to_db_dag_post.py:40} INFO - Đã lấy 36 bản ghi từ API (nhiều trang).
+[2025-06-05T05:55:30.044+0000] {api_to_db_dag_post.py:42} INFO - Sample record: {'id': 21563123, 'status': 'published', 'name': 'test', 'slug': 'div-data-o-lead-capture-1', 'hide_meta_info': False, 'published_at': '2025-05-16T12:46:34.000Z', 'created_at': '2025-05-16T12:46:34.000Z', 'updated_at': '2025-05-16T12:47:34.544Z', 'is_comments_enabled': True, 'is_liking_enabled': True, 'flagged_for_approval_at': None, 'body': {'id': 78680467, 'name': 'body', 'body': '', 'record_type': 'Post', 'record_id': 21563123, 'created_at': '2025-05-16T12:46:34.000Z', 'updated_at': '2025-05-16T12:46:34.000Z'}, 'tiptap_body': {'body': {'type': 'doc', 'content': []}, 'circle_ios_fallback_text': '', 'attachments': [], 'inline_attachments': [], 'sgids_to_object_map': {}, 'format': 'post', 'community_members': [], 'entities': [], 'group_mentions': [], 'polls': []}, 'url': 'https://via-staging.circle.so/c/test-discussion/div-data-o-lead-capture-1', 'space_name': 'Test Discussion', 'space_slug': 'test-discussion', 'space_id': 1984374, 'user_id': 18507639, 'user_email': 'dklong@vietnamisawesome.com', 'user_name': 'DK Long', 'community_id': 327527, 'user_avatar_url': 'https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSVlsRXdVPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3471ef6a0e9e37628eb6310416c1abeeefe6cc44/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU2Q25OaGRtVnlld1k2Q25OMGNtbHdWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--67365f61f655fbc86c65a51f2e9992ab818c41cd/candidate5.jpg', 'cover_image_url': None, 'cover_image': None, 'cardview_thumbnail_url': None, 'cardview_thumbnail': None, 'is_comments_closed': False, 'custom_html': '<div data-o-lead-capture="1"\n     data-form-uid="DQ2Dd4WV"\n     data-mode="embed">\n</div>', 'likes_count': 0, 'comments_count': 0, 'member_posts_count': 5, 'member_comments_count': 4, 'member_likes_count': 3, 'topics': []}
+[2025-06-05T05:55:30.045+0000] {api_to_db_dag_post.py:49} INFO - Đang kết nối đến cơ sở dữ liệu với Conn ID: QUANG
+[2025-06-05T05:55:30.072+0000] {base.py:83} INFO - Using connection ID 'QUANG' for task execution.
+[2025-06-05T05:55:30.378+0000] {api_to_db_dag_post.py:55} INFO - Kết nối cơ sở dữ liệu thành công.
+[2025-06-05T05:55:30.416+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.417+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.418+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.419+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.420+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.421+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.422+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.423+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.424+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.426+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314349 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.427+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.428+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.429+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.430+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314349 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.431+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314340 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.432+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.433+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.434+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.436+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314349 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.437+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314340 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.438+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21097340 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.439+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.440+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.441+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.442+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314349 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.443+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314340 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.444+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21097340 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.445+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=20854265 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.446+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21563123 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.447+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21405873 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.448+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314353 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.448+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314349 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.449+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21314340 vì user_id=28410442 không tồn tại trong community_members
+[2025-06-05T05:55:30.450+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=21097340 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.451+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=20854265 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.452+0000] {api_to_db_dag_post.py:113} WARNING - Bỏ qua post id=20671265 vì user_id=18507639 không tồn tại trong community_members
+[2025-06-05T05:55:30.453+0000] {api_to_db_dag_post.py:131} INFO - Không có bản ghi hợp lệ nào để chèn vào DB.
+[2025-06-05T05:55:30.454+0000] {api_to_db_dag_post.py:135} INFO - Đã đóng kết nối cơ sở dữ liệu.
+[2025-06-05T05:55:30.455+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-05T05:55:30.470+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=posts_ingestion, task_id=fetch_and_store_posts_task, execution_date=20250605T055518, start_date=20250605T055523, end_date=20250605T055530
+[2025-06-05T05:55:30.543+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-05T05:55:30.573+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

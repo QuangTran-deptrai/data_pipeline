@@ -1,0 +1,125 @@
+x-airflow-common:
+  &airflow-common
+  environment:
+    AIRFLOW_HOME: /opt/airflow
+    AIRFLOW__CORE__DAGS_FOLDER: /opt/airflow/dags
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysql/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+mysql://airflow:airflow@mysql/airflow
+    AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+    AIRFLOW__CORE__DEFAULT_TIMEZONE: Asia/Ho_Chi_Minh
+    AIRFLOW__CORE__LOGGING_LEVEL: INFO
+    AIRFLOW__CORE__REMOTE_LOGGING: 'false'
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    mysql:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: airflow
+      MYSQL_USER: airflow
+      MYSQL_PASSWORD: airflow
+      MYSQL_ROOT_PASSWORD: airflow
+    env_file:
+      - .env
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "localhost", "-u", "airflow", "-pairflow", "-e", "SELECT 1;"]
+      interval: 5s
+      retries: 5
+      start_period: 5s
+      timeout: 5s
+
+  redis:
+    image: redis:latest
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 5
+      start_period: 5s
+      timeout: 5s
+
+  airflow-init:
+    image: apache/airflow:2.8.1
+    command: |
+      bash -cx '
+      for i in $(seq 1 60); do
+        if mysql -h mysql -u airflow -pairflow -e "SELECT 1;" >/dev/null 2>&1; then
+          echo "MySQL database is ready for Airflow init."
+          break
+        fi
+        echo "Airflow init waiting for MySQL... (attempt $i)"
+        sleep 1
+      done
+      airflow db migrate
+      airflow users create --username quang --password quang123 --firstname Quang --lastname Admin --role Admin --email quang@example.com || true
+      '
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - airflow_data:/opt/airflow
+    <<: *airflow-common
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  webserver:
+    image: apache/airflow:2.8.1
+    command: bash -cx 'sleep 10 && airflow webserver'
+    ports:
+      - "8080:8080"
+    environment:
+      AIRFLOW__WEBSERVER__ENABLE_TEST_CONNECTION: 'True'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: mysql+mysqldb://airflow:airflow@mysql/airflow
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - airflow_data:/opt/airflow
+    <<: *airflow-common
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 30s
+      retries: 5
+      start_period: 60s
+
+  scheduler:
+    image: apache/airflow:2.8.1
+    command: airflow scheduler
+    env_file:
+      - .env
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - airflow_data:/opt/airflow
+    <<: *airflow-common
+    depends_on:
+      webserver:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
+  airflow_data:
+  dags:
+  logs:
+  plugins:

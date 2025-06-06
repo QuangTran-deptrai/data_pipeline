@@ -1,0 +1,76 @@
+[2025-06-04T17:53:25.230+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task scheduled__2025-06-03T17:00:00+00:00 [queued]>
+[2025-06-04T17:53:25.238+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task scheduled__2025-06-03T17:00:00+00:00 [queued]>
+[2025-06-04T17:53:25.239+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-04T17:53:25.258+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): fetch_and_store_community_members_task> on 2025-06-03 17:00:00+00:00
+[2025-06-04T17:53:25.262+0000] {standard_task_runner.py:60} INFO - Started process 233 to run task
+[2025-06-04T17:53:25.265+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'circle_community_members_ingestion', 'fetch_and_store_community_members_task', 'scheduled__2025-06-03T17:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/api_to_db_dag.py', '--cfg-path', '/tmp/tmptlwzchss']
+[2025-06-04T17:53:25.268+0000] {standard_task_runner.py:88} INFO - Job 2: Subtask fetch_and_store_community_members_task
+[2025-06-04T17:53:25.320+0000] {task_command.py:423} INFO - Running <TaskInstance: circle_community_members_ingestion.fetch_and_store_community_members_task scheduled__2025-06-03T17:00:00+00:00 [running]> on host e4f5e6f9211f
+[2025-06-04T17:53:25.408+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='circle_community_members_ingestion' AIRFLOW_CTX_TASK_ID='fetch_and_store_community_members_task' AIRFLOW_CTX_EXECUTION_DATE='2025-06-03T17:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-03T17:00:00+00:00'
+[2025-06-04T17:53:25.409+0000] {api_to_db_dag.py:19} INFO - Đang gọi API: https://app.circle.so/api/admin/v2/events?page=1&per_page=10
+[2025-06-04T17:53:26.223+0000] {api_to_db_dag.py:24} INFO - Dữ liệu nhận được từ API: {
+  "page": 1,
+  "per_page": 10,
+  "has_next_page": false,
+  "count": 1,
+  "page_count": 1,
+  "records": [
+    {
+      "id": 21097324,
+      "name": "Event 1",
+      "slug": "event-1",
+      "user_id": 18507639,
+      "community_member_id": 36644610,
+      "created_at": "2025-05-01T06:35:47.755Z",
+      "hide_meta_info": null,
+      "confirmation_message_title": null,
+      "confirmation_message_button_title": null,
+      "confirmation_message_button_link": null,
+      "confirmation_message_description": null,
+      "in_person_location": null,
+      "host": null,
+      "duration_in_seconds": 3600,
+      "enable_custom_thank_you_message": false,
+      "send_in_app_notification_confirmation": true,
+      "rsvp_disabled": false,
+      "send_email_confirmation": true,
+      "send_email_reminder": true,
+      "send_in_app_notification_reminder": true,
+      "virtual_location_url": null,
+      "starts_at": "2025-05-01T07:00:00.000Z",
+      "location_type": "in_person",
+      "hide_attendees": false,
+      "ends_at": "2025-05-01T08:00:00.000Z",
+      "updated_at": "2025-05-01T09:00:03.703Z",
+      "hide_location_from_non_attendees": false,
+      "space": {
+        "id": 2009621,
+        "slug": "event-space",
+        "name": "Event Space",
+        "community_id": 327527
+      },
+      "body": "Test Event Description",
+      "url": "https://via-staging.circle.so/c/event-space/event-1",
+      "member_email": "dklong@vietnamisawesome.com",
+      "member_name": "DK Long",
+      "member_avatar_url": "https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSVlsRXdVPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3471ef6a0e9e37628eb6310416c1abeeefe6cc44/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU2Q25OaGRtVnlld1k2Q25OMGNtbHdWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--67365f61f655fbc86c65a51f2e9992ab818c41cd/candidate5.jpg",
+      "zapier_display_title": "Event 1  1 May 2025 7:00AM UTC",
+      "likes_count": 0,
+      "comments_count": 1,
+      "cover_image_url": "https://assets-v2.circle.so/36p460la9wgfxmwi9jvr7id13mld",
+      "topics": []
+    }
+  ]
+}
+[2025-06-04T17:53:26.224+0000] {api_to_db_dag.py:34} INFO - Đang kết nối đến cơ sở dữ liệu với Conn ID: QUANG
+[2025-06-04T17:53:26.238+0000] {base.py:83} INFO - Using connection ID 'QUANG' for task execution.
+[2025-06-04T17:53:26.239+0000] {api_to_db_dag.py:38} INFO - MySQL connection info: host=sql12.freesqldatabase.com, user=sql12783027, schema=sql12783027, port=3306
+[2025-06-04T17:53:26.249+0000] {base.py:83} INFO - Using connection ID 'QUANG' for task execution.
+[2025-06-04T17:53:26.791+0000] {api_to_db_dag.py:41} INFO - Kết nối cơ sở dữ liệu thành công.
+[2025-06-04T17:53:26.794+0000] {api_to_db_dag.py:115} WARNING - Bỏ qua bản ghi do thiếu ID hoặc Email: {'id': 21097324, 'name': 'Event 1', 'slug': 'event-1', 'user_id': 18507639, 'community_member_id': 36644610, 'created_at': '2025-05-01T06:35:47.755Z', 'hide_meta_info': None, 'confirmation_message_title': None, 'confirmation_message_button_title': None, 'confirmation_message_button_link': None, 'confirmation_message_description': None, 'in_person_location': None, 'host': None, 'duration_in_seconds': 3600, 'enable_custom_thank_you_message': False, 'send_in_app_notification_confirmation': True, 'rsvp_disabled': False, 'send_email_confirmation': True, 'send_email_reminder': True, 'send_in_app_notification_reminder': True, 'virtual_location_url': None, 'starts_at': '2025-05-01T07:00:00.000Z', 'location_type': 'in_person', 'hide_attendees': False, 'ends_at': '2025-05-01T08:00:00.000Z', 'updated_at': '2025-05-01T09:00:03.703Z', 'hide_location_from_non_attendees': False, 'space': {'id': 2009621, 'slug': 'event-space', 'name': 'Event Space', 'community_id': 327527}, 'body': 'Test Event Description', 'url': 'https://via-staging.circle.so/c/event-space/event-1', 'member_email': 'dklong@vietnamisawesome.com', 'member_name': 'DK Long', 'member_avatar_url': 'https://app.circle.so/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCSVlsRXdVPSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--3471ef6a0e9e37628eb6310416c1abeeefe6cc44/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVFJc0FXa0NMQUU2Q25OaGRtVnlld1k2Q25OMGNtbHdWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--67365f61f655fbc86c65a51f2e9992ab818c41cd/candidate5.jpg', 'zapier_display_title': 'Event 1  1 May 2025 7:00AM UTC', 'likes_count': 0, 'comments_count': 1, 'cover_image_url': 'https://assets-v2.circle.so/36p460la9wgfxmwi9jvr7id13mld', 'topics': []}
+[2025-06-04T17:53:26.796+0000] {api_to_db_dag.py:122} INFO - Không có bản ghi hợp lệ nào để chèn vào cơ sở dữ liệu.
+[2025-06-04T17:53:26.798+0000] {api_to_db_dag.py:132} INFO - Đã đóng kết nối cơ sở dữ liệu.
+[2025-06-04T17:53:26.811+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-04T17:53:26.848+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=circle_community_members_ingestion, task_id=fetch_and_store_community_members_task, execution_date=20250603T170000, start_date=20250604T175325, end_date=20250604T175326
+[2025-06-04T17:53:26.942+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-04T17:53:27.071+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,203 @@
+[2025-06-06T00:36:07.036+0000] {processor.py:161} INFO - Started process (PID=166) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:07.041+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:36:07.043+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:07.042+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:07.107+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:08.034+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:08.033+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:36:08.185+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:08.184+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:36:08.377+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 1.353 seconds
+[2025-06-06T00:36:38.873+0000] {processor.py:161} INFO - Started process (PID=209) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:38.874+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:36:38.875+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:38.875+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:38.899+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:36:38.928+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:38.928+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:36:38.952+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:36:38.952+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:36:38.982+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.113 seconds
+[2025-06-06T00:37:09.798+0000] {processor.py:161} INFO - Started process (PID=239) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:09.799+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:37:09.800+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:09.800+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:09.822+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:09.853+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:09.853+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:37:09.882+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:09.882+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:37:09.917+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.122 seconds
+[2025-06-06T00:37:40.612+0000] {processor.py:161} INFO - Started process (PID=269) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:40.613+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:37:40.614+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:40.614+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:40.636+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:37:40.661+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:40.661+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:37:40.682+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:37:40.682+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:37:40.710+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.100 seconds
+[2025-06-06T00:38:11.437+0000] {processor.py:161} INFO - Started process (PID=299) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:11.438+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:38:11.439+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:11.439+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:11.460+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:11.484+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:11.484+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:38:11.505+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:11.505+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:38:11.533+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.099 seconds
+[2025-06-06T00:38:42.203+0000] {processor.py:161} INFO - Started process (PID=329) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:42.204+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:38:42.205+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:42.204+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:42.230+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:38:42.258+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:42.258+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:38:42.281+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:38:42.281+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:38:42.311+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.111 seconds
+[2025-06-06T00:39:12.997+0000] {processor.py:161} INFO - Started process (PID=359) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:12.997+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:39:12.998+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:12.998+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:13.022+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:13.046+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:13.046+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:39:13.067+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:13.067+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:39:13.094+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.101 seconds
+[2025-06-06T00:39:43.726+0000] {processor.py:161} INFO - Started process (PID=389) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:43.727+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:39:43.728+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:43.727+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:43.750+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:39:43.774+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:43.774+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:39:43.797+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:39:43.796+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:39:43.822+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.100 seconds
+[2025-06-06T00:40:14.516+0000] {processor.py:161} INFO - Started process (PID=419) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:14.517+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:40:14.518+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:14.518+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:14.539+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:14.569+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:14.569+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:40:14.603+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:14.603+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:40:14.633+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.120 seconds
+[2025-06-06T00:40:45.450+0000] {processor.py:161} INFO - Started process (PID=449) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:45.451+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:40:45.452+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:45.452+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:45.475+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:40:45.499+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:45.499+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:40:45.522+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:40:45.521+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:40:45.549+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.102 seconds
+[2025-06-06T00:41:16.259+0000] {processor.py:161} INFO - Started process (PID=479) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:16.261+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:41:16.263+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:16.263+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:16.308+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:16.349+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:16.349+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:41:16.388+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:16.388+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:41:16.427+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.172 seconds
+[2025-06-06T00:41:47.024+0000] {processor.py:161} INFO - Started process (PID=509) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:47.026+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:41:47.027+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:47.027+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:47.064+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:41:47.108+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:47.108+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:41:47.152+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:41:47.151+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:41:47.188+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.168 seconds
+[2025-06-06T00:42:17.996+0000] {processor.py:161} INFO - Started process (PID=539) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:17.998+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:42:17.999+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:17.999+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:18.032+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:18.068+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:18.068+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:42:18.100+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:18.100+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:42:18.139+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.148 seconds
+[2025-06-06T00:42:48.738+0000] {processor.py:161} INFO - Started process (PID=569) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:48.739+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:42:48.741+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:48.740+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:48.773+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:42:48.809+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:48.808+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:42:48.848+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:42:48.847+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:42:48.886+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.152 seconds
+[2025-06-06T00:43:19.558+0000] {processor.py:161} INFO - Started process (PID=599) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:19.559+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:43:19.560+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:19.560+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:19.594+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:19.628+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:19.628+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:43:19.657+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:19.657+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:43:19.693+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.139 seconds
+[2025-06-06T00:43:50.464+0000] {processor.py:161} INFO - Started process (PID=629) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:50.466+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:43:50.468+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:50.468+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:50.510+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:43:50.553+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:50.553+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:43:50.592+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:43:50.592+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:43:50.631+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.172 seconds
+[2025-06-06T00:44:21.360+0000] {processor.py:161} INFO - Started process (PID=659) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:21.362+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:44:21.363+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:21.363+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:21.398+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:21.439+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:21.439+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:44:21.473+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:21.473+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:44:21.511+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.156 seconds
+[2025-06-06T00:44:52.130+0000] {processor.py:161} INFO - Started process (PID=689) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:52.132+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:44:52.133+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:52.133+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:52.183+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:44:52.223+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:52.222+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:44:52.258+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:44:52.257+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:44:52.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.183 seconds
+[2025-06-06T00:45:23.136+0000] {processor.py:161} INFO - Started process (PID=719) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:23.138+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:45:23.139+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:23.139+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:23.184+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:23.229+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:23.228+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:45:23.267+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:23.267+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:45:23.306+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.175 seconds
+[2025-06-06T00:45:53.929+0000] {processor.py:161} INFO - Started process (PID=749) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:53.930+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:45:53.932+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:53.932+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:53.962+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:45:53.998+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:53.998+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:45:54.031+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:45:54.031+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:45:54.069+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.144 seconds
+[2025-06-06T00:46:24.970+0000] {processor.py:161} INFO - Started process (PID=779) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:24.971+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:46:24.973+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:24.972+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:24.996+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:25.022+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:25.022+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:46:25.048+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:25.047+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:46:25.076+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.109 seconds
+[2025-06-06T00:46:55.739+0000] {processor.py:161} INFO - Started process (PID=809) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:55.740+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:46:55.741+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:55.741+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:55.762+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:46:55.785+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:55.785+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:46:55.809+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:46:55.808+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:46:55.837+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.101 seconds
+[2025-06-06T00:47:26.396+0000] {processor.py:161} INFO - Started process (PID=839) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:26.397+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:47:26.398+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:26.398+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:26.423+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:26.449+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:26.449+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:47:26.473+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:26.473+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:47:26.500+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.109 seconds
+[2025-06-06T00:47:57.179+0000] {processor.py:161} INFO - Started process (PID=869) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:57.180+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:47:57.181+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:57.180+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:57.203+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:47:57.230+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:57.229+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:47:57.254+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:47:57.254+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:47:57.283+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.108 seconds
+[2025-06-06T00:48:27.919+0000] {processor.py:161} INFO - Started process (PID=899) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:27.920+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:48:27.921+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:27.921+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:27.943+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:27.968+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:27.968+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:48:27.990+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:27.990+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:48:28.018+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.102 seconds
+[2025-06-06T00:48:58.660+0000] {processor.py:161} INFO - Started process (PID=929) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:58.662+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:48:58.662+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:58.662+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:58.685+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:48:58.711+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:58.711+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:48:58.734+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:48:58.734+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:48:58.770+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.113 seconds
+[2025-06-06T00:49:29.404+0000] {processor.py:161} INFO - Started process (PID=959) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:49:29.405+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:49:29.406+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:49:29.406+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:49:29.429+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:49:29.455+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:49:29.455+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:49:29.480+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:49:29.480+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:49:29.507+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.106 seconds
+[2025-06-06T00:50:00.069+0000] {processor.py:161} INFO - Started process (PID=989) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:00.070+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:50:00.071+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:00.070+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:00.094+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:00.121+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:00.121+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:50:00.143+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:00.143+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:50:00.171+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.105 seconds
+[2025-06-06T00:50:30.853+0000] {processor.py:161} INFO - Started process (PID=1019) to work on /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:30.854+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/api_to_db_dag_commments.py for tasks to queue
+[2025-06-06T00:50:30.855+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:30.855+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:30.879+0000] {processor.py:840} INFO - DAG(s) 'comments_ingestion' retrieved from /opt/airflow/dags/api_to_db_dag_commments.py
+[2025-06-06T00:50:30.906+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:30.905+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2025-06-06T00:50:30.927+0000] {logging_mixin.py:188} INFO - [2025-06-06T00:50:30.927+0000] {dag.py:3823} INFO - Setting next_dagrun for comments_ingestion to 2025-06-06 00:30:00+00:00, run_after=2025-06-06 01:00:00+00:00
+[2025-06-06T00:50:30.954+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/api_to_db_dag_commments.py took 0.105 seconds
