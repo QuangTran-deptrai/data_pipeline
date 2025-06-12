@@ -53,6 +53,9 @@ def fetch_and_store_events(**kwargs):
         conn = hook.get_conn()
         cur = conn.cursor()
         log.info("Kết nối cơ sở dữ liệu thành công.")
+        # Lấy danh sách community_member_id đã có trong community_members
+        cur.execute("SELECT community_member_id FROM community_members")
+        existing_member_ids = set(row[0] for row in cur.fetchall())
 
         if not records:
             log.info("Không có bản ghi nào từ API để chèn.")
@@ -91,7 +94,7 @@ def fetch_and_store_events(**kwargs):
             ten_events = record.get('name')
             slug = record.get('slug')
             host = record.get('host')
-            community_member_id = record.get('community_member_id')
+            community_member_id = record.get('user_id')
             in_person_location = record.get('in_person_location')
             starts_at_str = record.get('starts_at')
             ends_at_str = record.get('ends_at')
@@ -119,6 +122,10 @@ def fetch_and_store_events(**kwargs):
             ends_at = parse_dt(ends_at_str)
             created_at = parse_dt(created_at_str)
             updated_at = parse_dt(updated_at_str)
+            
+            if community_member_id not in existing_member_ids:
+                log.warning(f"community_member_id {community_member_id} trong event KHÔNG tồn tại ở community_members, bỏ qua event này.")
+                continue
 
             # Kiểm tra trường bắt buộc
             if None in (event_id, ten_events, slug, community_member_id, starts_at, ends_at, url):

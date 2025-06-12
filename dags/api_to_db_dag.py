@@ -29,6 +29,20 @@ def fetch_all_records(api_url, api_headers):
 
 import os
 
+def parse_datetime(dtstr):
+    if not dtstr:
+        return None
+    try:
+        if dtstr.endswith('Z'):
+            dtstr = dtstr[:-1] + '+00:00'
+        
+        dt = datetime.fromisoformat(dtstr)
+        
+        return dt.strftime('%Y-%m-%d %H:%M:%S')
+    except Exception:
+        
+        return None
+
 def fetch_and_store_members(**kwargs):
     api_url = kwargs['params'].get('api_url', 'https://app.circle.so/api/admin/v2/community_members?page=1&per_page=10')
     CIRCLE_API_KEY = os.getenv("CIRCLE_API_KEY")
@@ -62,31 +76,28 @@ def fetch_and_store_members(**kwargs):
             log.info("Không có bản ghi nào từ API để chèn.")
             return
 
-        insert_sql = f"""
-        INSERT INTO {table_name} (
-            community_member_id, first_name, last_name, ten_community_members, email, avatar_url,
-            location, description, created_at, updated_at, posts_count, comments_count,
-            total_points, current_level, current_level_name, points_to_next_level, level_progress
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        insert_sql = """
+        INSERT INTO community_members (
+            community_member_id, first_name, last_name, ten_community_members, email, avatar_url, location, description,
+            created_at, updated_at, posts_count, comments_count, total_points, current_level_name, points_to_next_level
+        )
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON DUPLICATE KEY UPDATE
-            first_name=VALUES(first_name),
-            last_name=VALUES(last_name),
-            ten_community_members=VALUES(ten_community_members),
-            email=VALUES(email),
-            avatar_url=VALUES(avatar_url),
-            location=VALUES(location),
-            description=VALUES(description),
-            created_at=VALUES(created_at),
-            updated_at=VALUES(updated_at),
-            posts_count=VALUES(posts_count),
-            comments_count=VALUES(comments_count),
-            total_points=VALUES(total_points),
-            current_level=VALUES(current_level),
-            current_level_name=VALUES(current_level_name),
-            points_to_next_level=VALUES(points_to_next_level),
-            level_progress=VALUES(level_progress)
-        """
-
+        first_name=VALUES(first_name),
+        last_name=VALUES(last_name),
+        ten_community_members=VALUES(ten_community_members),
+        email=VALUES(email),
+        avatar_url=VALUES(avatar_url),
+        location=VALUES(location),
+        description=VALUES(description),
+        created_at=VALUES(created_at),
+        updated_at=VALUES(updated_at),
+        posts_count=VALUES(posts_count),
+        comments_count=VALUES(comments_count),
+        total_points=VALUES(total_points),
+        current_level_name=VALUES(current_level_name),
+        points_to_next_level=VALUES(points_to_next_level)
+"""
         def parse_name(name):
             if not name:
                 return None, None
@@ -104,7 +115,6 @@ def fetch_and_store_members(**kwargs):
             if not first_name or not last_name:
                 first_name, last_name = parse_name(member_name)
         
-            # --- avatar_url ---
             avatar_url = None
             for pf in r.get('profile_fields', []):
                 if pf.get('key') == 'avatar_url':
@@ -113,7 +123,6 @@ def fetch_and_store_members(**kwargs):
             if not avatar_url:
                 avatar_url = r.get('flattened_profile_fields', {}).get('avatar_url') or r.get('avatar_url')
         
-            # --- location ---
             location = None
             for pf in r.get('profile_fields', []):
                 if pf.get('key') == 'location':
@@ -127,7 +136,6 @@ def fetch_and_store_members(**kwargs):
             if not location:
                 location = r.get('flattened_profile_fields', {}).get('location')
         
-            # --- description ---
             description = None
             for pf in r.get('profile_fields', []):
                 if pf.get('key') == 'bio':
@@ -150,15 +158,13 @@ def fetch_and_store_members(**kwargs):
                 avatar_url,
                 location,
                 description,
-                r.get('created_at'),
-                r.get('updated_at'),
+                parse_datetime(r.get('created_at')),
+                parse_datetime(r.get('updated_at')),
                 r.get('posts_count', 0),
                 r.get('comments_count', 0),
                 r.get('gamification_stats', {}).get('total_points', 0),
-                r.get('gamification_stats', {}).get('current_level', 1),
                 r.get('gamification_stats', {}).get('current_level_name'),
-                r.get('gamification_stats', {}).get('points_to_next_level', 10),
-                r.get('gamification_stats', {}).get('level_progress', 0)
+                r.get('gamification_stats', {}).get('points_to_next_level', 10)
             ))
 
         if values:
