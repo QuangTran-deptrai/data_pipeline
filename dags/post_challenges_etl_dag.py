@@ -11,16 +11,16 @@ def generate_post_challenges(**kwargs):
     conn = hook.get_conn()
     cur = conn.cursor()
 
-    # Lấy danh sách level theo thứ tự required_points tăng dần
+   
     cur.execute("SELECT level_name, required_points FROM level_configs ORDER BY required_points ASC")
     level_rows = cur.fetchall()
     level_names = [row[0] for row in level_rows]
 
-    # Lấy max post_challenge_id hiện tại
+   
     cur.execute("SELECT COALESCE(MAX(post_challenge_id), 0) FROM post_challenges")
     current_max_id = cur.fetchone()[0]
 
-    # Tạo thử thách cho từng post
+    
     cur.execute("SELECT post_id, user_id FROM posts")
     post_rows = cur.fetchall()
     for post_id, user_id in post_rows:
@@ -32,7 +32,7 @@ def generate_post_challenges(**kwargs):
             user_level_index = level_names.index(user_level_name) if user_level_name in level_names else 0
             points_reward += user_level_index * 2
 
-        # Kiểm tra đã tồn tại thử thách cho post này chưa
+    
         cur.execute("SELECT post_challenge_id FROM post_challenges WHERE post_id=%s AND type='comment'", (post_id,))
         result = cur.fetchone()
         if result:
@@ -53,7 +53,7 @@ def generate_post_challenges(**kwargs):
                 updated_at=NOW()
         """, (post_challenge_id, post_id, points_reward, (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')))
 
-    # Tạo thử thách cho từng event
+    
     cur.execute("SELECT event_id FROM events")
     event_ids = [row[0] for row in cur.fetchall()]
     for event_id in event_ids:

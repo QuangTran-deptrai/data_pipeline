@@ -29,6 +29,8 @@ def fetch_all_records(api_url, api_headers):
     return all_records
 
 def fetch_and_store_events(**kwargs):
+    import os
+    from datetime import datetime
     api_url = kwargs['params'].get('api_url', 'https://app.circle.so/api/admin/v2/events?page=1&per_page=60')
     CIRCLE_API_KEY = os.getenv("CIRCLE_API_KEY")
     api_headers = {
@@ -53,7 +55,6 @@ def fetch_and_store_events(**kwargs):
         conn = hook.get_conn()
         cur = conn.cursor()
         log.info("Kết nối cơ sở dữ liệu thành công.")
-        # Lấy danh sách community_member_id đã có trong community_members
         cur.execute("SELECT community_member_id FROM community_members")
         existing_member_ids = set(row[0] for row in cur.fetchall())
 
@@ -62,31 +63,40 @@ def fetch_and_store_events(**kwargs):
             return
 
         insert_sql = f"""
-        INSERT INTO {table_name} (
-            event_id, ten_events, slug, host, community_member_id, in_person_location,
-            starts_at, ends_at, created_at, updated_at, url, cover_image_url, description,
-            price, max_attendees, current_attendees, status, category, location_url
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        ON DUPLICATE KEY UPDATE
-            ten_events = VALUES(ten_events),
-            slug = VALUES(slug),
-            host = VALUES(host),
-            community_member_id = VALUES(community_member_id),
-            in_person_location = VALUES(in_person_location),
-            starts_at = VALUES(starts_at),
-            ends_at = VALUES(ends_at),
-            created_at = VALUES(created_at),
-            updated_at = VALUES(updated_at),
-            url = VALUES(url),
-            cover_image_url = VALUES(cover_image_url),
-            description = VALUES(description),
-            price = VALUES(price),
-            max_attendees = VALUES(max_attendees),
-            current_attendees = VALUES(current_attendees),
-            status = VALUES(status),
-            category = VALUES(category),
-            location_url = VALUES(location_url)
+            INSERT INTO {table_name} (
+                event_id, ten_events, slug, host, community_member_id, in_person_location,
+                starts_at, ends_at, created_at, updated_at, url, cover_image_url, description,
+                price, ticket_type, max_attendees, current_attendees, status, category, location_url
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ON DUPLICATE KEY UPDATE
+                ten_events = VALUES(ten_events),
+                slug = VALUES(slug),
+                host = VALUES(host),
+                community_member_id = VALUES(community_member_id),
+                in_person_location = VALUES(in_person_location),
+                starts_at = VALUES(starts_at),
+                ends_at = VALUES(ends_at),
+                created_at = VALUES(created_at),
+                updated_at = VALUES(updated_at),
+                url = VALUES(url),
+                cover_image_url = VALUES(cover_image_url),
+                description = VALUES(description),
+                price = VALUES(price),
+                ticket_type = VALUES(ticket_type),
+                max_attendees = VALUES(max_attendees),
+                current_attendees = VALUES(current_attendees),
+                status = VALUES(status),
+                category = VALUES(category),
+                location_url = VALUES(location_url)
         """
+
+        def parse_dt(dtstr):
+            if dtstr:
+                try:
+                    return datetime.fromisoformat(dtstr.replace('Z', '+00:00'))
+                except Exception:
+                    log.warning(f"Could not parse datetime: {dtstr}")
+            return None
 
         values_to_insert = []
         for record in records:
@@ -96,46 +106,33 @@ def fetch_and_store_events(**kwargs):
             host = record.get('host')
             community_member_id = record.get('user_id')
             in_person_location = record.get('in_person_location')
-            starts_at_str = record.get('starts_at')
-            ends_at_str = record.get('ends_at')
-            created_at_str = record.get('created_at')
-            updated_at_str = record.get('updated_at')
+            starts_at = parse_dt(record.get('starts_at'))
+            ends_at = parse_dt(record.get('ends_at'))
+            created_at = parse_dt(record.get('created_at'))
+            updated_at = parse_dt(record.get('updated_at'))
             url = record.get('url')
             cover_image_url = record.get('cover_image_url')
             description = record.get('body')
             price = record.get('price')
+            ticket_type = record.get('ticket_type', 'free')
             max_attendees = record.get('max_attendees')
             current_attendees = record.get('current_attendees', 0)
             status = record.get('status', 'upcoming')
             category = record.get('category')
             location_url = record.get('virtual_location_url')
 
-            def parse_dt(dtstr):
-                if dtstr:
-                    try:
-                        return datetime.fromisoformat(dtstr.replace('Z', '+00:00'))
-                    except Exception:
-                        log.warning(f"Could not parse datetime: {dtstr}")
-                return None
-
-            starts_at = parse_dt(starts_at_str)
-            ends_at = parse_dt(ends_at_str)
-            created_at = parse_dt(created_at_str)
-            updated_at = parse_dt(updated_at_str)
-            
             if community_member_id not in existing_member_ids:
                 log.warning(f"community_member_id {community_member_id} trong event KHÔNG tồn tại ở community_members, bỏ qua event này.")
                 continue
 
-            # Kiểm tra trường bắt buộc
-            if None in (event_id, ten_events, slug, community_member_id, starts_at, ends_at, url):
+            if None in (event_id, ten_events, slug, community_member_id, starts_at, ends_at, url, ticket_type):
                 log.warning(f"Bỏ qua bản ghi do thiếu trường bắt buộc: {record}")
                 continue
 
             values_to_insert.append((
                 event_id, ten_events, slug, host, community_member_id, in_person_location,
                 starts_at, ends_at, created_at, updated_at, url, cover_image_url, description,
-                price, max_attendees, current_attendees, status, category, location_url
+                price, ticket_type, max_attendees, current_attendees, status, category, location_url
             ))
 
         if values_to_insert:
